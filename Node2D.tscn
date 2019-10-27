@@ -11,6 +11,7 @@ height = 14.162
 position = Vector2( 383.205, 893.98 )
 
 [node name="Dino" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1669.43, -571.812 )
 scale = Vector2( 0.29999, 0.29999 )
 script = ExtResource( 1 )
@@ -19,6 +20,20 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dino/Dino-idle_00000"]
+position = Vector2( -21.0083, 81.4736 )
+scale = Vector2( 5, 5 )
+shape = SubResource( 1 )
+
+[node name="Dino2" type="Area2D" parent="."]
+position = Vector2( 1669.43, -571.812 )
+scale = Vector2( 0.29999, 0.29999 )
+script = ExtResource( 1 )
+
+[node name="Dino-idle_00000" type="Sprite" parent="Dino2"]
+position = Vector2( -4320.14, -67.5022 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dino2/Dino-idle_00000"]
 position = Vector2( -21.0083, 81.4736 )
 scale = Vector2( 5, 5 )
 shape = SubResource( 1 )
