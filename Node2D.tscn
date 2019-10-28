@@ -1,37 +1,193 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=42 format=2]
 
-[ext_resource path="res://Dino.gd" type="Script" id=1]
-[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00000.png" type="Texture" id=2]
-[ext_resource path="res://Score.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Dino_Prefab/Dino-Running/Dino-running_00000.png" type="Texture" id=4]
+[ext_resource path="res://ParallaxBackground.gd" type="Script" id=1]
+[ext_resource path="res://Background/Sand.png" type="Texture" id=2]
+[ext_resource path="res://Background/Nuvem-m.png" type="Texture" id=3]
+[ext_resource path="res://Background/Nuvem-p.png" type="Texture" id=4]
+[ext_resource path="res://Dino.gd" type="Script" id=5]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00000.png" type="Texture" id=6]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00001.png" type="Texture" id=7]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00002.png" type="Texture" id=8]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00003.png" type="Texture" id=9]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00004.png" type="Texture" id=10]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00005.png" type="Texture" id=11]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00006.png" type="Texture" id=12]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00007.png" type="Texture" id=13]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00008.png" type="Texture" id=14]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00009.png" type="Texture" id=15]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00010.png" type="Texture" id=16]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00011.png" type="Texture" id=17]
+[ext_resource path="res://Dino_Prefab/Dino-Running/Dino-running_00000.png" type="Texture" id=18]
+[ext_resource path="res://Dino_Prefab/Dino-Running/Dino-running_00001.png" type="Texture" id=19]
+[ext_resource path="res://Dino_Prefab/Dino-Running/Dino-running_00002.png" type="Texture" id=20]
+[ext_resource path="res://Dino_Prefab/Dino-Running/Dino-running_00003.png" type="Texture" id=21]
+[ext_resource path="res://Dino_Prefab/Dino-Running/Dino-running_00004.png" type="Texture" id=22]
+[ext_resource path="res://Dino_Prefab/Dino-Running/Dino-running_00005.png" type="Texture" id=23]
+[ext_resource path="res://Dino_Prefab/Dino-Running/Dino-running_00006.png" type="Texture" id=24]
+[ext_resource path="res://Dino_Prefab/Dino-Running/Dino-running_00007.png" type="Texture" id=25]
+[ext_resource path="res://Dino_Prefab/Dino-Running/Dino-running_00008.png" type="Texture" id=26]
+[ext_resource path="res://Dino_Prefab/Dino-Running/Dino-running_00009.png" type="Texture" id=27]
+[ext_resource path="res://Dino_Prefab/Dino-Running/Dino-running_00010.png" type="Texture" id=28]
+[ext_resource path="res://Dino_Prefab/Dino-Running/Dino-running_00011.png" type="Texture" id=29]
+[ext_resource path="res://Dino_Prefab/Dino-Running/Dino-running_00012.png" type="Texture" id=30]
+[ext_resource path="res://Dino_Prefab/Dino-Running/Dino-running_00013.png" type="Texture" id=31]
+[ext_resource path="res://Dino_Prefab/Dino-Running/Dino-running_00014.png" type="Texture" id=32]
+[ext_resource path="res://Dino_Prefab/Dino-Running/Dino-running_00015.png" type="Texture" id=33]
+[ext_resource path="res://Dino_Prefab/Dino-Running/Dino-running_00016.png" type="Texture" id=34]
+[ext_resource path="res://Dino_Prefab/Dino-Running/Dino-running_00017.png" type="Texture" id=35]
+[ext_resource path="res://Score.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Score.gd" type="Script" id=37]
+[ext_resource path="res://CactoG.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Background_musics/Music_gaming.ogg" type="AudioStream" id=39]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 23.1078
-height = 14.162
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "idle",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "running",
+"speed": 30.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 24.4812
+height = 9.94922
 
 [node name="Node2D" type="Node2D"]
-position = Vector2( 383.205, 893.98 )
+position = Vector2( 366.707, 875.125 )
 
-[node name="Dino" type="Area2D" parent="."]
-position = Vector2( -51.8213, -342.312 )
-scale = Vector2( 0.29999, 0.29999 )
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource( 1 )
 
-[node name="Dino-idle_00000" type="Sprite" parent="Dino"]
-editor/display_folded = true
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 8, 8 )
+motion_mirroring = Vector2( 2486.43, 0 )
+
+[node name="Sand" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+margin_left = -23.0
+margin_top = 468.0
+margin_right = 2573.0
+margin_bottom = 803.0
 texture = ExtResource( 2 )
+expand = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dino/Dino-idle_00000"]
-position = Vector2( -21.0083, 81.4736 )
+[node name="Nuvem" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+motion_scale = Vector2( 0.25, -0.56 )
+motion_mirroring = Vector2( 2357.72, 0 )
+
+[node name="Nuvem-m" type="Sprite" parent="ParallaxBackground/Nuvem"]
+position = Vector2( 843.07, 126.778 )
+texture = ExtResource( 3 )
+offset = Vector2( -75.824, -8.65059 )
+
+[node name="Nuvem-m3" type="Sprite" parent="ParallaxBackground/Nuvem"]
+position = Vector2( 1113.34, 90.3948 )
+texture = ExtResource( 3 )
+offset = Vector2( -75.824, -8.65059 )
+
+[node name="Nuvem-m2" type="Sprite" parent="ParallaxBackground/Nuvem"]
+position = Vector2( 640.364, 102.523 )
+texture = ExtResource( 3 )
+offset = Vector2( -75.824, -8.65059 )
+
+[node name="Nuvem-m4" type="Sprite" parent="ParallaxBackground/Nuvem"]
+position = Vector2( 948.754, 76.535 )
+texture = ExtResource( 3 )
+offset = Vector2( -75.824, -8.65059 )
+
+[node name="Nuvem-p" type="Sprite" parent="ParallaxBackground/Nuvem"]
+position = Vector2( 691.014, 126.79 )
+texture = ExtResource( 4 )
+
+[node name="Nuvem-p4" type="Sprite" parent="ParallaxBackground/Nuvem"]
+position = Vector2( 961.289, 90.4068 )
+texture = ExtResource( 4 )
+
+[node name="Nuvem-p2" type="Sprite" parent="ParallaxBackground/Nuvem"]
+position = Vector2( 635.574, 135.453 )
+texture = ExtResource( 4 )
+
+[node name="Nuvem-p3" type="Sprite" parent="ParallaxBackground/Nuvem"]
+position = Vector2( 943.964, 109.465 )
+texture = ExtResource( 4 )
+
+[node name="Nuvem2" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+motion_mirroring = Vector2( 2357.72, 0 )
+
+[node name="Nuvem-m" type="Sprite" parent="ParallaxBackground/Nuvem2"]
+position = Vector2( 746.048, 194.347 )
+texture = ExtResource( 3 )
+offset = Vector2( -75.824, -8.65059 )
+
+[node name="Nuvem-m3" type="Sprite" parent="ParallaxBackground/Nuvem2"]
+position = Vector2( 1154.93, 199.544 )
+texture = ExtResource( 3 )
+offset = Vector2( -75.824, -8.65059 )
+
+[node name="Nuvem-m2" type="Sprite" parent="ParallaxBackground/Nuvem2"]
+position = Vector2( 472.309, 133.708 )
+texture = ExtResource( 3 )
+offset = Vector2( -75.824, -8.65059 )
+
+[node name="Nuvem-m4" type="Sprite" parent="ParallaxBackground/Nuvem2"]
+position = Vector2( 863.86, 83.4651 )
+texture = ExtResource( 3 )
+offset = Vector2( -75.824, -8.65059 )
+
+[node name="Nuvem-p" type="Sprite" parent="ParallaxBackground/Nuvem2"]
+position = Vector2( 593.993, 194.359 )
+texture = ExtResource( 4 )
+
+[node name="Nuvem-p4" type="Sprite" parent="ParallaxBackground/Nuvem2"]
+position = Vector2( 902.383, 168.371 )
+texture = ExtResource( 4 )
+
+[node name="Nuvem-p2" type="Sprite" parent="ParallaxBackground/Nuvem2"]
+position = Vector2( 538.552, 203.021 )
+texture = ExtResource( 4 )
+
+[node name="Nuvem-p3" type="Sprite" parent="ParallaxBackground/Nuvem2"]
+position = Vector2( 846.942, 177.033 )
+texture = ExtResource( 4 )
+
+[node name="Dino" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( -27.6815, -340.69 )
+scale = Vector2( 0.210353, 0.210353 )
+z_index = 1
+script = ExtResource( 5 )
+
+[node name="Dino-idle_00000" type="AnimatedSprite" parent="Dino"]
+position = Vector2( 79.3311, 0.182861 )
+scale = Vector2( 1.43973, 1.43973 )
+frames = SubResource( 1 )
+animation = "running"
+frame = 7
+speed_scale = 2.0
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dino"]
+position = Vector2( 46.3331, 128.286 )
 scale = Vector2( 5, 5 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="score" parent="." instance=ExtResource( 3 )]
+[node name="score" parent="." instance=ExtResource( 36 )]
 margin_left = -357.403
 margin_top = -858.933
 margin_right = -357.403
 margin_bottom = -858.933
+script = ExtResource( 37 )
 
-[node name="Dino-running_00000" type="Sprite" parent="."]
-position = Vector2( 507.672, -355.854 )
-texture = ExtResource( 4 )
+[node name="CactoG" parent="." instance=ExtResource( 38 )]
+position = Vector2( 691.543, -450 )
+
+[node name="MusicInit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 39 )
+volume_db = -19.82
+autoplay = true

@@ -1,12 +1,20 @@
 extends Area2D
-var trilhaCimaMax = -300
-var trilhaBaixoMax = -100
+
+var cacto = preload("res://CactoG.tscn")
+
+var trilhaCimaMax = -450
+var trilhaBaixoMax = -200
 var trilhaAtual = -200
-var chao = Vector2(90, trilhaAtual)
+var positionX = 50
+var chao = Vector2(positionX, trilhaAtual)
 var gravidade = 4000
 var velocidade = Vector2()
-var velocidade_pulo = -1800
-var modificador_gravidade = 3
+var velocidade_pulo = -2000
+var modificador_gravidade = 2.3
+
+# cacto intervalo
+var tempo = 0.0
+var intervalo = 0.8
 
 
 # Called when the node enters the scene tree for the first time.
@@ -16,7 +24,18 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	
+	if trilhaAtual < -325:
+		set("z_index", -1)
+	else:
+		if trilhaAtual > -325:
+			set("z_index", 4)
+		
+	tempo+=delta
+	if tempo>=intervalo:
+		tempo = 0
+		get_parent().add_child(cacto.instance())
+		
+		
 	velocidade.y += gravidade * delta
 	
 	if Input.is_action_pressed("pular"):
@@ -30,16 +49,19 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("cima"):
 		if trilhaAtual > trilhaCimaMax:
-			trilhaAtual += -10
-			chao = Vector2(90, trilhaAtual)
+			trilhaAtual += -5
+			chao = Vector2(positionX, trilhaAtual)
 	else:
 		if Input.is_action_pressed("baixo"):
 			if trilhaAtual < trilhaBaixoMax:
-				trilhaAtual += +10
-				chao = Vector2(90, trilhaAtual)
+				trilhaAtual += +5
+				chao = Vector2(positionX, trilhaAtual)
 	
 	position += velocidade * delta
 	
 	
 	if get_position().y > chao.y:
 		set_position(chao)
+func colidiu(area):
+	get_tree().change_scene("res://Menu.tscn")
+
