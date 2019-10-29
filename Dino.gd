@@ -6,7 +6,7 @@ var obstaculos = [cacto, pedra, cacto]
 var obstaculo = 0
 
 var trilhaCimaMax = -425
-var trilhaBaixoMax = -200
+var trilhaBaixoMax = -150
 var trilhaAtual = -200
 var positionX = 50
 var chao = Vector2(positionX, trilhaAtual)
@@ -18,7 +18,6 @@ var modificador_gravidade = 2.3
 # cacto intervalo
 var tempo = 0
 var intervalo = 0
-var tempos = [0.4, 0.5, 0.8]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,7 +27,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	var intervalo = rand_range(0.5, tempos.size())
+	var intervalo = randi()%3+1
 	if !(trilhaAtual <= -425):
 		set("z_index", 1)
 	if !(trilhaAtual <= -350):
@@ -36,13 +35,13 @@ func _physics_process(delta):
 	if !(trilhaAtual <= -290):
 		set("z_index", 3)
 	if !(trilhaAtual <= -200):
-		set("z_index", 4)
+		set("z_index", 3)
 	
 	tempo+=delta
 	if tempo>=intervalo:
-		tempo = 0
-		_randomize_obstaculos()
+		obstaculo = randi()%3
 		get_parent().add_child(obstaculos[obstaculo].instance())
+		tempo = 0
 	
 	velocidade.y += gravidade * delta
 	
@@ -72,7 +71,9 @@ func _physics_process(delta):
 		set_position(chao)
 
 func colidiu(area):
-	get_tree().change_scene("res://Menu.tscn")
+	
+	get_tree().change_scene("res://GameOver.tscn")
 
 func _randomize_obstaculos():
 	obstaculo = randi()%3
+
