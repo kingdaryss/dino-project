@@ -27,6 +27,7 @@ rect_scale = Vector2( 0.803616, 0.803616 )
 texture = ExtResource( 2 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
+editor/display_folded = true
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -34,6 +35,7 @@ margin_top = -310.0
 margin_bottom = -142.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+editor/display_folded = true
 margin_left = 133.0
 margin_right = 1232.0
 margin_bottom = 168.0
@@ -59,9 +61,11 @@ margin_bottom = 168.0
 text = "Sair"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
 position = Vector2( 992.265, 7.42712 )
 z_index = 1
 motion_scale = Vector2( 2, 2 )

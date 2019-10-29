@@ -18,7 +18,7 @@ var modificador_gravidade = 2.3
 # cacto intervalo
 var tempo = 0
 var intervalo = 0
-var tempos = [0.3, 0.5, 0.8, 1.0, 1.5, 1.6, 1.7, 1.9]
+var tempos = [0.4, 0.5, 0.8]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,7 +28,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	var intervalo = rand_range(0, tempos.size())
+	var intervalo = rand_range(0.5, tempos.size())
 	if !(trilhaAtual <= -425):
 		set("z_index", 1)
 	if !(trilhaAtual <= -350):
