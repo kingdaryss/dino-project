@@ -5,7 +5,7 @@ onready var dino = get_parent().get_node("Dino")
 var chao = Vector2(1400,-400)
 var velocidade = Vector2(-800, 0)
 var tempo_vida = 5
-var cactos = [-425, -350, -290, -200]
+var pedras = [-400,-325,-270,-200,-150]
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -13,19 +13,19 @@ var cactos = [-425, -350, -290, -200]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	var c = rand_range(0, cactos.size())
-	if cactos[c] == -425:
-		set("z_index", 0)
+	var c = rand_range(0, pedras.size())
+	if pedras[c] == -400:
+		set("z_index", -2)
 	else:
-		if cactos[c] == -350:
-			set("z_index", 1)
+		if pedras[c] == -325:
+			set("z_index", 0)
 		else:
-			if cactos[c] == -290:
-				set("z_index", 2)
+			if pedras[c] == -200:
+				set("z_index", 1)
 			else:
-				if cactos[c] == -200:
-					set("z_index", 3)
-	chao = Vector2(1400, cactos[c])
+				if pedras[c] == -150:
+					set("z_index", 2)
+	chao = Vector2(1400, pedras[c])
 	
 	set_position(chao)
 	
