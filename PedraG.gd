@@ -1,9 +1,8 @@
 extends Area2D
 
 onready var dino = get_parent().get_node("Dino")
-#-450 a -200
 var chao = Vector2(1400,-400)
-var velocidade = Vector2(-800, 0)
+var velocidade = Vector2(-800,0)
 var tempo_vida = 5
 var pedras = [-400,-325,-270,-200]
 # Declare member variables here. Examples:
@@ -30,8 +29,7 @@ func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
-
+func _process(delta):
 	set_position(position + velocidade * delta)
 	tempo_vida = tempo_vida - delta
 	if tempo_vida <= 0:

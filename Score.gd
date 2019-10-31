@@ -1,6 +1,6 @@
 extends Control
-export var score = 0
-export var increase_by_time = 1;
+var score = 0
+var increase_by_time = 10;
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -14,5 +14,5 @@ func _ready():
 func _process(delta):
 	score += increase_by_time * delta
 	var score_label = get_node('lbl_score_value')
-	score_label.set_text(str(int(score)))
+	score_label.text = str(int(score))
 	pass

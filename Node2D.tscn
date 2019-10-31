@@ -1,10 +1,10 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://ParallaxBackground.gd" type="Script" id=1]
-[ext_resource path="res://Background/Sand.png" type="Texture" id=2]
-[ext_resource path="res://Background/Arbusto.png" type="Texture" id=3]
-[ext_resource path="res://Background/Nuvem-m.png" type="Texture" id=4]
-[ext_resource path="res://Background/Nuvem-p.png" type="Texture" id=5]
+[ext_resource path="res://Background/Nuvem-m.png" type="Texture" id=2]
+[ext_resource path="res://Background/Nuvem-p.png" type="Texture" id=3]
+[ext_resource path="res://Background/Sand.png" type="Texture" id=4]
+[ext_resource path="res://Background/Arbusto.png" type="Texture" id=5]
 [ext_resource path="res://Dino.gd" type="Script" id=6]
 [ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00000.png" type="Texture" id=7]
 [ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00001.png" type="Texture" id=8]
@@ -41,10 +41,11 @@
 [ext_resource path="res://Background_musics/Music_gaming.ogg" type="AudioStream" id=39]
 [ext_resource path="res://CactoG.tscn" type="PackedScene" id=40]
 [ext_resource path="res://PedraG.tscn" type="PackedScene" id=41]
+[ext_resource path="res://GameOver.tscn" type="PackedScene" id=42]
 
-[sub_resource type="ConvexPolygonShape2D" id=2]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
@@ -63,114 +64,6 @@ position = Vector2( 366.707, 875.125 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource( 1 )
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-editor/display_folded = true
-motion_scale = Vector2( 8, 8 )
-motion_mirroring = Vector2( 2486.43, 0 )
-
-[node name="Sand" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-margin_left = -23.0
-margin_top = 468.0
-margin_right = 2573.0
-margin_bottom = 803.0
-texture = ExtResource( 2 )
-expand = true
-
-[node name="Arbusto" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-margin_left = 575.901
-margin_top = 448.754
-margin_right = 1151.9
-margin_bottom = 777.754
-rect_scale = Vector2( 0.508859, 0.433251 )
-texture = ExtResource( 3 )
-
-[node name="Arbusto9" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-margin_left = 2240.03
-margin_top = 587.12
-margin_right = 2816.03
-margin_bottom = 916.12
-rect_scale = Vector2( 0.508859, 0.433251 )
-texture = ExtResource( 3 )
-
-[node name="Arbusto4" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-margin_left = 26.1776
-margin_top = 549.723
-margin_right = 602.178
-margin_bottom = 878.723
-rect_scale = Vector2( 0.508859, 0.433251 )
-texture = ExtResource( 3 )
-
-[node name="Arbusto8" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-margin_left = 1226.59
-margin_top = 482.411
-margin_right = 1802.59
-margin_bottom = 811.411
-rect_scale = Vector2( 0.508859, 0.433251 )
-texture = ExtResource( 3 )
-
-[node name="Arbusto2" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-margin_left = 714.267
-margin_top = 482.411
-margin_right = 1290.27
-margin_bottom = 811.411
-rect_scale = Vector2( -0.451141, 0.433251 )
-texture = ExtResource( 3 )
-expand = true
-
-[node name="Arbusto10" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-margin_left = 2378.4
-margin_top = 620.776
-margin_right = 2954.4
-margin_bottom = 949.776
-rect_scale = Vector2( -0.451141, 0.433251 )
-texture = ExtResource( 3 )
-expand = true
-
-[node name="Arbusto6" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-margin_left = 2142.8
-margin_top = 471.192
-margin_right = 2718.8
-margin_bottom = 800.192
-rect_scale = Vector2( -0.451141, 0.433251 )
-texture = ExtResource( 3 )
-expand = true
-
-[node name="Arbusto5" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-margin_left = 837.674
-margin_top = 508.588
-margin_right = 1413.67
-margin_bottom = 837.588
-rect_scale = Vector2( -0.451141, 0.433251 )
-texture = ExtResource( 3 )
-expand = true
-
-[node name="Arbusto11" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-margin_left = 2501.8
-margin_top = 646.954
-margin_right = 3077.8
-margin_bottom = 975.954
-rect_scale = Vector2( -0.451141, 0.433251 )
-texture = ExtResource( 3 )
-expand = true
-
-[node name="Arbusto7" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-margin_left = 1858.59
-margin_top = 575.901
-margin_right = 2434.59
-margin_bottom = 904.901
-rect_scale = Vector2( -0.451141, 0.433251 )
-texture = ExtResource( 3 )
-expand = true
-
-[node name="Arbusto3" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-margin_left = 1267.73
-margin_top = 628.256
-margin_right = 1843.73
-margin_bottom = 957.256
-rect_scale = Vector2( -0.451141, 0.433251 )
-texture = ExtResource( 3 )
-expand = true
-
 [node name="Nuvem" type="ParallaxLayer" parent="ParallaxBackground"]
 editor/display_folded = true
 motion_scale = Vector2( 0.25, -0.56 )
@@ -178,39 +71,39 @@ motion_mirroring = Vector2( 2357.72, 0 )
 
 [node name="Nuvem-m" type="Sprite" parent="ParallaxBackground/Nuvem"]
 position = Vector2( 843.07, 126.778 )
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 offset = Vector2( -75.824, -8.65059 )
 
 [node name="Nuvem-m3" type="Sprite" parent="ParallaxBackground/Nuvem"]
 position = Vector2( 1113.34, 90.3948 )
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 offset = Vector2( -75.824, -8.65059 )
 
 [node name="Nuvem-m2" type="Sprite" parent="ParallaxBackground/Nuvem"]
 position = Vector2( 640.364, 102.523 )
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 offset = Vector2( -75.824, -8.65059 )
 
 [node name="Nuvem-m4" type="Sprite" parent="ParallaxBackground/Nuvem"]
 position = Vector2( 948.754, 76.535 )
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 offset = Vector2( -75.824, -8.65059 )
 
 [node name="Nuvem-p" type="Sprite" parent="ParallaxBackground/Nuvem"]
 position = Vector2( 691.014, 126.79 )
-texture = ExtResource( 5 )
+texture = ExtResource( 3 )
 
 [node name="Nuvem-p4" type="Sprite" parent="ParallaxBackground/Nuvem"]
 position = Vector2( 961.289, 90.4068 )
-texture = ExtResource( 5 )
+texture = ExtResource( 3 )
 
 [node name="Nuvem-p2" type="Sprite" parent="ParallaxBackground/Nuvem"]
 position = Vector2( 635.574, 135.453 )
-texture = ExtResource( 5 )
+texture = ExtResource( 3 )
 
 [node name="Nuvem-p3" type="Sprite" parent="ParallaxBackground/Nuvem"]
 position = Vector2( 943.964, 109.465 )
-texture = ExtResource( 5 )
+texture = ExtResource( 3 )
 
 [node name="Nuvem2" type="ParallaxLayer" parent="ParallaxBackground"]
 editor/display_folded = true
@@ -218,39 +111,150 @@ motion_mirroring = Vector2( 2357.72, 0 )
 
 [node name="Nuvem-m" type="Sprite" parent="ParallaxBackground/Nuvem2"]
 position = Vector2( 746.048, 194.347 )
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 offset = Vector2( -75.824, -8.65059 )
 
 [node name="Nuvem-m3" type="Sprite" parent="ParallaxBackground/Nuvem2"]
 position = Vector2( 1154.93, 199.544 )
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 offset = Vector2( -75.824, -8.65059 )
 
 [node name="Nuvem-m2" type="Sprite" parent="ParallaxBackground/Nuvem2"]
 position = Vector2( 472.309, 133.708 )
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 offset = Vector2( -75.824, -8.65059 )
 
 [node name="Nuvem-m4" type="Sprite" parent="ParallaxBackground/Nuvem2"]
 position = Vector2( 863.86, 83.4651 )
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 offset = Vector2( -75.824, -8.65059 )
 
 [node name="Nuvem-p" type="Sprite" parent="ParallaxBackground/Nuvem2"]
 position = Vector2( 593.993, 194.359 )
-texture = ExtResource( 5 )
+texture = ExtResource( 3 )
 
 [node name="Nuvem-p4" type="Sprite" parent="ParallaxBackground/Nuvem2"]
 position = Vector2( 902.383, 168.371 )
-texture = ExtResource( 5 )
+texture = ExtResource( 3 )
 
 [node name="Nuvem-p2" type="Sprite" parent="ParallaxBackground/Nuvem2"]
 position = Vector2( 538.552, 203.021 )
-texture = ExtResource( 5 )
+texture = ExtResource( 3 )
 
 [node name="Nuvem-p3" type="Sprite" parent="ParallaxBackground/Nuvem2"]
 position = Vector2( 846.942, 177.033 )
+texture = ExtResource( 3 )
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+script = ExtResource( 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+editor/display_folded = true
+motion_scale = Vector2( 8, 8 )
+motion_mirroring = Vector2( 2486.43, 0 )
+
+[node name="Sand" type="TextureRect" parent="ParallaxBackground2/ParallaxLayer"]
+margin_left = -23.0
+margin_top = 468.0
+margin_right = 2573.0
+margin_bottom = 803.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Arbusto" type="TextureRect" parent="ParallaxBackground2/ParallaxLayer"]
+margin_left = 575.901
+margin_top = 448.754
+margin_right = 1151.9
+margin_bottom = 777.754
+rect_scale = Vector2( 0.508859, 0.433251 )
 texture = ExtResource( 5 )
+
+[node name="Arbusto9" type="TextureRect" parent="ParallaxBackground2/ParallaxLayer"]
+margin_left = 2240.03
+margin_top = 587.12
+margin_right = 2816.03
+margin_bottom = 916.12
+rect_scale = Vector2( 0.508859, 0.433251 )
+texture = ExtResource( 5 )
+
+[node name="Arbusto4" type="TextureRect" parent="ParallaxBackground2/ParallaxLayer"]
+margin_left = 26.1776
+margin_top = 549.723
+margin_right = 602.178
+margin_bottom = 878.723
+rect_scale = Vector2( 0.508859, 0.433251 )
+texture = ExtResource( 5 )
+
+[node name="Arbusto8" type="TextureRect" parent="ParallaxBackground2/ParallaxLayer"]
+margin_left = 1226.59
+margin_top = 482.411
+margin_right = 1802.59
+margin_bottom = 811.411
+rect_scale = Vector2( 0.508859, 0.433251 )
+texture = ExtResource( 5 )
+
+[node name="Arbusto2" type="TextureRect" parent="ParallaxBackground2/ParallaxLayer"]
+margin_left = 714.267
+margin_top = 482.411
+margin_right = 1290.27
+margin_bottom = 811.411
+rect_scale = Vector2( -0.451141, 0.433251 )
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Arbusto10" type="TextureRect" parent="ParallaxBackground2/ParallaxLayer"]
+margin_left = 2378.4
+margin_top = 620.776
+margin_right = 2954.4
+margin_bottom = 949.776
+rect_scale = Vector2( -0.451141, 0.433251 )
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Arbusto6" type="TextureRect" parent="ParallaxBackground2/ParallaxLayer"]
+margin_left = 2142.8
+margin_top = 471.192
+margin_right = 2718.8
+margin_bottom = 800.192
+rect_scale = Vector2( -0.451141, 0.433251 )
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Arbusto5" type="TextureRect" parent="ParallaxBackground2/ParallaxLayer"]
+margin_left = 837.674
+margin_top = 508.588
+margin_right = 1413.67
+margin_bottom = 837.588
+rect_scale = Vector2( -0.451141, 0.433251 )
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Arbusto11" type="TextureRect" parent="ParallaxBackground2/ParallaxLayer"]
+margin_left = 2501.8
+margin_top = 646.954
+margin_right = 3077.8
+margin_bottom = 975.954
+rect_scale = Vector2( -0.451141, 0.433251 )
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Arbusto7" type="TextureRect" parent="ParallaxBackground2/ParallaxLayer"]
+margin_left = 1858.59
+margin_top = 575.901
+margin_right = 2434.59
+margin_bottom = 904.901
+rect_scale = Vector2( -0.451141, 0.433251 )
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Arbusto3" type="TextureRect" parent="ParallaxBackground2/ParallaxLayer"]
+margin_left = 1267.73
+margin_top = 628.256
+margin_right = 1843.73
+margin_bottom = 957.256
+rect_scale = Vector2( -0.451141, 0.433251 )
+texture = ExtResource( 5 )
+expand = true
 
 [node name="Dino" type="Area2D" parent="."]
 position = Vector2( -27.681, -325 )
@@ -261,14 +265,15 @@ script = ExtResource( 6 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dino"]
 position = Vector2( 26.9628, 119.468 )
 scale = Vector2( 15.9428, -12.1081 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Dino-idle_00000" type="AnimatedSprite" parent="Dino"]
+pause_mode = 2
 position = Vector2( 79.3311, 0.182861 )
 scale = Vector2( 1.17073, 1.05309 )
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "running"
-frame = 3
+frame = 7
 speed_scale = 2.0
 playing = true
 
@@ -278,7 +283,6 @@ margin_top = -858.933
 margin_right = -357.403
 margin_bottom = -858.933
 script = ExtResource( 38 )
-increase_by_time = 10
 
 [node name="MusicInit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 39 )
@@ -289,3 +293,9 @@ position = Vector2( 691.543, -350 )
 
 [node name="PedraG" parent="." instance=ExtResource( 41 )]
 position = Vector2( 509.626, -150 )
+
+[node name="GameOver" parent="." instance=ExtResource( 42 )]
+margin_left = -368.176
+margin_top = -876.609
+margin_right = -368.176
+margin_bottom = -876.609
