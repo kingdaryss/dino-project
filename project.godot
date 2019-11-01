@@ -15,12 +15,12 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Project_Dino"
+config/name="Dino Adventure"
 run/main_scene="res://Menu.tscn"
 boot_splash/image="res://Dino-logo.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0.913725, 0.466667, 0.0745098, 1 )
-config/icon="res://icon.png"
+config/icon="res://Dino-logo.png"
 
 [display]
 

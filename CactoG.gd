@@ -5,7 +5,7 @@ onready var dino = get_parent().get_node("Dino")
 var chao = Vector2(1400,-400)
 var velocidade = Vector2(-800,0)
 var tempo_vida = 5
-var cactos = [-425, -350, -290, -200, -170]
+var cactos = [-420, -350, -290, -200, -170]
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -14,7 +14,7 @@ var cactos = [-425, -350, -290, -200, -170]
 func _ready():
 	randomize()
 	var c = rand_range(0, cactos.size())
-	if cactos[c] == -425:
+	if cactos[c] == -420:
 		set("z_index", -1)
 	else:
 		if cactos[c] == -350:
