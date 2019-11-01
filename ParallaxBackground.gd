@@ -1,6 +1,6 @@
 extends ParallaxBackground
 
-var paralax_offset = 0
+var parallax_offset = 0
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -12,6 +12,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	paralax_offset -= delta * 100
-	set_scroll_offset(Vector2(paralax_offset, 0))
+	parallax_offset -= delta * 100
+	set_scroll_offset(Vector2(parallax_offset, 0))
 	pass

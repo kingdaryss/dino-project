@@ -15,7 +15,6 @@ func _process(delta):
 
 func _on_jogar_novamente_pressed():
 	get_tree().change_scene("res://Node2D.tscn")
-	get_tree().paused = false
 	pass # Replace with function body.
 
 

@@ -23,6 +23,7 @@ func _ready():
 				set("z_index", 1)
 	chao = Vector2(1400, pedras[c])
 	connect("area_entered", dino, "colidiu")
+	connect("area_exited", dino, "colidiu")
 	set_position(chao)
 	
 
@@ -30,7 +31,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	set_position(position + velocidade * delta)
+	set_position(position + get_node("/root/Node2D").velocidade * delta)
 	tempo_vida = tempo_vida - delta
 	if tempo_vida <= 0:
 		queue_free()

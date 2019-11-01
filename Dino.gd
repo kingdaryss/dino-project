@@ -6,17 +6,17 @@ var obstaculos = [cacto, pedra]
 var obstaculo = 0
 
 #fisica
-export(bool) var IsVivo = true
-export(bool) var IsGrounded = false
-var trilhaCimaMax = -400
+export(bool) var isVivo = true
+export(bool) var isGrounded = false
+var trilhaCimaMax = -420
 var trilhaBaixoMax = -200
-var trilhaAtual = -200
+var trilhaAtual = -220
 var positionX = 50
 var chao = Vector2(positionX, trilhaAtual)
 var gravidade = 4000
 var velocidade = Vector2()
-var velocidade_pulo = -1200
-var modificador_gravidade = 2.3
+var velocidade_pulo = -1600
+var modificador_gravidade = 4
 
 # randomize
 var rng = RandomNumberGenerator.new()
@@ -29,13 +29,13 @@ var intervalo = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
+	rng.randomize()
 	set_position(chao)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	rng.randomize()
-	var intervalo = rng.randf_range(0.1, 2.0)
+	var intervalo = rng.randf_range(0.5, 1.0)
 	if !(trilhaAtual <= -350):
 		set("z_index", 1)
 	if !(trilhaAtual <= -290):
@@ -77,14 +77,14 @@ func _physics_process(delta):
 	if get_position().y > chao.y:
 		set_position(chao)
 	if get_position().y == chao.y:
-		IsGrounded = true
+		isGrounded = true
 	else:
-		IsGrounded = false
+		isGrounded = false
 
 func colidiu(area):
-	if IsGrounded == true:
-		IsVivo = false
-		$"Dino-idle_00000".animation = "idle"
+	if isGrounded == true:
+		isVivo = false
+		$"Dino-idle_00000".animation = "dying"
 		get_tree().paused = true
 		get_parent().get_node("GameOver").show()
 
