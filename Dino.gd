@@ -15,7 +15,7 @@ var positionX = 50
 var chao = Vector2(positionX, trilhaAtual)
 var gravidade = 4000
 var velocidade = Vector2()
-var velocidade_pulo = -1600
+var velocidade_pulo = -2200
 var modificador_gravidade = 4
 
 # randomize
@@ -28,6 +28,7 @@ var intervalo = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$"Dino-idle_00000".animation = get_node("/root/Node2D").AnimationRunning
 	randomize()
 	rng.randomize()
 	set_position(chao)
@@ -35,14 +36,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	var intervalo = rng.randf_range(0.5, 1.0)
+	var intervalo = rng.randf_range(1.0, 2.0)
+	if !(trilhaAtual <= -370):
+		set("z_index", 0)
 	if !(trilhaAtual <= -350):
 		set("z_index", 1)
-	if !(trilhaAtual <= -290):
+	if !(trilhaAtual <= -300):
 		set("z_index", 2)
-	if !(trilhaAtual <= -200):
+	if !(trilhaAtual <= -220):
 		set("z_index", 3)
-	if !(trilhaAtual <= -150):
+	if !(trilhaAtual <= -170):
 		set("z_index", 4)
 	
 	tempo+=delta
@@ -84,7 +87,7 @@ func _physics_process(delta):
 func colidiu(area):
 	if isGrounded == true:
 		isVivo = false
-		$"Dino-idle_00000".animation = "dying"
+		$"Dino-idle_00000".animation = get_node("/root/Node2D").AnimationDying
 		get_tree().paused = true
 		get_parent().get_node("GameOver").show()
 

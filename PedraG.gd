@@ -14,13 +14,16 @@ func _ready():
 	randomize()
 	var c = rand_range(0, pedras.size())
 	if pedras[c] == -400:
-		set("z_index", -2)
+		set("z_index", -1)
 	else:
 		if pedras[c] == -325:
 			set("z_index", 0)
 		else:
-			if pedras[c] == -200:
+			if pedras[c] == -270:
 				set("z_index", 1)
+			else:
+				if pedras[c] == -200:
+					set("z_index", 2)
 	chao = Vector2(1400, pedras[c])
 	connect("area_entered", dino, "colidiu")
 	connect("area_exited", dino, "colidiu")

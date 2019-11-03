@@ -1,6 +1,9 @@
 extends Node2D
 
 var velocidade = Vector2(-500,0)
+var AnimationRunning = ""
+var AnimationDying = ""
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -12,5 +15,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	velocidade.x -= delta*30
+	velocidade.x -= delta*5
 	pass

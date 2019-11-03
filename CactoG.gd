@@ -5,7 +5,7 @@ onready var dino = get_parent().get_node("Dino")
 var chao = Vector2(1400,-400)
 var velocidade = Vector2(-800,0)
 var tempo_vida = 5
-var cactos = [-420, -350, -290, -200, -170]
+var cactos = [-420, -350, -290, -200]
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -18,16 +18,13 @@ func _ready():
 		set("z_index", -1)
 	else:
 		if cactos[c] == -350:
-			set("z_index", 1)
+			set("z_index", 0)
 		else:
 			if cactos[c] == -290:
 				set("z_index", 1)
 			else:
 				if cactos[c] == -200:
 					set("z_index", 2)
-				else:
-					if cactos[c] == -170:
-						set("z_index", 3)
 	chao = Vector2(1400, cactos[c])
 
 	connect("area_entered", dino, "colidiu")

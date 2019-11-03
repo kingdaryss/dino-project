@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://GameOver.gd" type="Script" id=1]
 [ext_resource path="res://Score.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Score.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/SuperMario256.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+use_filter = true
+font_data = ExtResource( 4 )
 
 [node name="GameOver" type="Control"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -33,22 +37,23 @@ margin_bottom = 418.0
 
 [node name="jogar_novamente" type="Button" parent="VBoxContainer"]
 pause_mode = 2
-margin_right = 120.0
-margin_bottom = 20.0
+margin_right = 187.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 1 )
 text = "Jogar Novamente"
 
 [node name="menu_principal" type="Button" parent="VBoxContainer"]
 pause_mode = 2
-margin_top = 24.0
-margin_right = 120.0
-margin_bottom = 44.0
+margin_top = 26.0
+margin_right = 187.0
+margin_bottom = 46.0
 text = "Menu Principal"
 
 [node name="quit" type="Button" parent="VBoxContainer"]
 pause_mode = 2
-margin_top = 48.0
-margin_right = 120.0
-margin_bottom = 68.0
+margin_top = 50.0
+margin_right = 187.0
+margin_bottom = 70.0
 text = "Sair"
 [connection signal="pressed" from="VBoxContainer/jogar_novamente" to="." method="_on_jogar_novamente_pressed"]
 [connection signal="pressed" from="VBoxContainer/menu_principal" to="." method="_on_menu_principal_pressed"]

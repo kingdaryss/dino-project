@@ -95,10 +95,10 @@ position = Vector2( 8.07959, 11.6339 )
 scale = Vector2( 0.181378, 0.19131 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 5
+frame = 60
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 10.5991, 68.7461 )
-scale = Vector2( 1.03932, 2.66243 )
+position = Vector2( 11.5212, 70.2829 )
+scale = Vector2( 1.03932, 2.29516 )
 shape = SubResource( 2 )
