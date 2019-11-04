@@ -8,7 +8,7 @@ func _process(delta):
 	score += increase_by_time * delta
 	var score_label = get_node('HBoxContainer/lbl_score_value')
 	score_label.text = str(int(score))
-	if score >= 100:
+	if score >= 500:
 		get_tree().paused = true
 		
 	pass

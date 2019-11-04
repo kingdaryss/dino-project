@@ -31,10 +31,20 @@ func _on_btnSpike_pressed():
 	self.queue_free()
 	pass 
 
+func _on_btnRaptor_pressed():
+	mudaCenaNode2D()
+	get_node("/root/Node2D/Deserto/Dino").AnimationRunning = "raptor-running"
+	get_node("/root/Node2D/Deserto/Dino").AnimationDying = "raptor-dying"
+	self.queue_free()
+	pass
+
 
 #FUNC PARA MUDAR DE CENA
 func mudaCenaNode2D():
 	get_node("/root/Node2D").add_child(scena.instance())
 	pass
+
+
+
 
 
