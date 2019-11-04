@@ -5,14 +5,15 @@ var chao = Vector2(1400,-400)
 var velocidade = Vector2(-800,0)
 var tempo_vida = 5
 var pedras = [-400,-325,-270,-200]
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
 	var c = rand_range(0, pedras.size())
+	chao = Vector2(1400, pedras[c])
+	set_position(chao)
+
+# SETANDO Z_INDEX DO OBSTACULO DE ACORDO COM SEU ARRAY DE POSIÇÕES PARA PERSPECTIVA DE PROFUNDIDADE
+
 	if pedras[c] == -400:
 		set("z_index", -1)
 	else:
@@ -24,17 +25,18 @@ func _ready():
 			else:
 				if pedras[c] == -200:
 					set("z_index", 2)
-	chao = Vector2(1400, pedras[c])
-	connect("area_entered", dino, "colidiu")
-	connect("area_exited", dino, "colidiu")
-	set_position(chao)
-	
 
+# FUNÇÕES DO COLLIDER AREA2D PARA CHAMAR A FUNÇÃO COLIDIU DENTRO DO DINO.GD
+
+	connect("area_entered", dino, "colidiu")
+	connect("area_exited", dino, "saiuColidiu")
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	set_position(position + get_node("/root/Node2D").velocidade * delta)
+
+# CONSULTA O DESERTO.GD PARA AUMENTAR A VELOCIDADE DO SELF
+
+	set_position(position + get_node("/root/Node2D/Deserto").velocidade * delta)
 	tempo_vida = tempo_vida - delta
 	if tempo_vida <= 0:
 		queue_free()

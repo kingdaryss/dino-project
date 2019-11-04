@@ -2,16 +2,12 @@ extends ParallaxBackground
 
 var parallax_offset = Vector2()
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	parallax_offset -= get_node("/root/Node2D").velocidade * -delta
+# VELOCIDADE DO CHÃO AUMENTADA POR DELTAFRAME CONSULTADO NO res://Deserto.gd
+
+	parallax_offset -= get_node("/root/Node2D/Deserto").velocidade * -delta
 	set_scroll_offset(parallax_offset)
 	pass

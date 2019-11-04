@@ -1,0 +1,222 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ParallaxBackground.gd" type="Script" id=1]
+[ext_resource path="res://Background/Nuvem-p.png" type="Texture" id=2]
+[ext_resource path="res://Background/Nuvem-m.png" type="Texture" id=3]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+editor/display_folded = true
+script = ExtResource( 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+editor/display_folded = true
+position = Vector2( 992.265, 7.42712 )
+z_index = 1
+motion_scale = Vector2( 2, 2 )
+motion_mirroring = Vector2( 1787.98, 0 )
+
+[node name="Nuvem-p2" type="TextureRect" parent="ParallaxLayer"]
+margin_left = 188.277
+margin_top = 141.252
+margin_right = 302.277
+margin_bottom = 186.252
+rect_pivot_offset = Vector2( 89.4578, 21.3211 )
+texture = ExtResource( 2 )
+
+[node name="Nuvem-p3" type="TextureRect" parent="ParallaxLayer"]
+margin_left = -28.5955
+margin_top = 286.824
+margin_right = 85.4045
+margin_bottom = 331.824
+rect_pivot_offset = Vector2( 89.4578, 21.3211 )
+texture = ExtResource( 2 )
+
+[node name="Nuvem-m" type="TextureRect" parent="ParallaxLayer"]
+margin_left = -6.31427
+margin_top = 182.844
+margin_right = 202.686
+margin_bottom = 226.844
+rect_pivot_offset = Vector2( 284.049, -20.2708 )
+texture = ExtResource( 3 )
+
+[node name="Nuvem-m3" type="TextureRect" parent="ParallaxLayer"]
+margin_left = -163.77
+margin_top = 301.678
+margin_right = 45.2305
+margin_bottom = 345.678
+rect_pivot_offset = Vector2( 284.049, -20.2708 )
+texture = ExtResource( 3 )
+
+[node name="Nuvem-m2" type="TextureRect" parent="ParallaxLayer"]
+margin_left = 212.044
+margin_top = 185.815
+margin_right = 421.044
+margin_bottom = 229.815
+rect_pivot_offset = Vector2( 65.6908, -23.2416 )
+texture = ExtResource( 3 )
+
+[node name="Nuvem-m4" type="TextureRect" parent="ParallaxLayer"]
+margin_left = -58.304
+margin_top = 319.503
+margin_right = 150.696
+margin_bottom = 363.503
+rect_pivot_offset = Vector2( 65.6908, -23.2416 )
+texture = ExtResource( 3 )
+
+[node name="Nuvem-p" type="TextureRect" parent="ParallaxLayer"]
+margin_left = 151.141
+margin_top = 200.669
+margin_right = 265.141
+margin_bottom = 245.669
+rect_pivot_offset = Vector2( 126.593, -38.0959 )
+texture = ExtResource( 2 )
+
+[node name="Nuvem-p4" type="TextureRect" parent="ParallaxLayer"]
+margin_left = -129.604
+margin_top = 322.474
+margin_right = -15.6045
+margin_bottom = 367.474
+rect_pivot_offset = Vector2( 126.593, -38.0959 )
+texture = ExtResource( 2 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+editor/display_folded = true
+position = Vector2( 641.705, -144.086 )
+z_index = 1
+motion_scale = Vector2( 5, 5 )
+motion_mirroring = Vector2( 1696.74, 0 )
+
+[node name="Nuvem-p2" type="TextureRect" parent="ParallaxLayer2"]
+margin_left = 188.277
+margin_top = 141.252
+margin_right = 302.277
+margin_bottom = 186.252
+rect_pivot_offset = Vector2( 89.4578, 21.3211 )
+texture = ExtResource( 2 )
+
+[node name="Nuvem-p3" type="TextureRect" parent="ParallaxLayer2"]
+margin_left = -28.5955
+margin_top = 286.824
+margin_right = 85.4045
+margin_bottom = 331.824
+rect_pivot_offset = Vector2( 89.4578, 21.3211 )
+texture = ExtResource( 2 )
+
+[node name="Nuvem-m" type="TextureRect" parent="ParallaxLayer2"]
+margin_left = -6.31427
+margin_top = 182.844
+margin_right = 202.686
+margin_bottom = 226.844
+rect_pivot_offset = Vector2( 284.049, -20.2708 )
+texture = ExtResource( 3 )
+
+[node name="Nuvem-m3" type="TextureRect" parent="ParallaxLayer2"]
+margin_left = -163.77
+margin_top = 301.678
+margin_right = 45.2305
+margin_bottom = 345.678
+rect_pivot_offset = Vector2( 284.049, -20.2708 )
+texture = ExtResource( 3 )
+
+[node name="Nuvem-m2" type="TextureRect" parent="ParallaxLayer2"]
+margin_left = 212.044
+margin_top = 185.815
+margin_right = 421.044
+margin_bottom = 229.815
+rect_pivot_offset = Vector2( 65.6908, -23.2416 )
+texture = ExtResource( 3 )
+
+[node name="Nuvem-m4" type="TextureRect" parent="ParallaxLayer2"]
+margin_left = -58.304
+margin_top = 319.503
+margin_right = 150.696
+margin_bottom = 363.503
+rect_pivot_offset = Vector2( 65.6908, -23.2416 )
+texture = ExtResource( 3 )
+
+[node name="Nuvem-p" type="TextureRect" parent="ParallaxLayer2"]
+margin_left = 151.141
+margin_top = 200.669
+margin_right = 265.141
+margin_bottom = 245.669
+rect_pivot_offset = Vector2( 126.593, -38.0959 )
+texture = ExtResource( 2 )
+
+[node name="Nuvem-p4" type="TextureRect" parent="ParallaxLayer2"]
+margin_left = -129.604
+margin_top = 322.474
+margin_right = -15.6045
+margin_bottom = 367.474
+rect_pivot_offset = Vector2( 126.593, -38.0959 )
+texture = ExtResource( 2 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+editor/display_folded = true
+position = Vector2( 170.824, -65.3588 )
+z_index = 1
+motion_scale = Vector2( 3.98, 2 )
+motion_mirroring = Vector2( 1802.41, 0 )
+
+[node name="Nuvem-p2" type="TextureRect" parent="ParallaxLayer3"]
+margin_left = 188.277
+margin_top = 141.252
+margin_right = 302.277
+margin_bottom = 186.252
+rect_pivot_offset = Vector2( 89.4578, 21.3211 )
+texture = ExtResource( 2 )
+
+[node name="Nuvem-p3" type="TextureRect" parent="ParallaxLayer3"]
+margin_left = -28.5955
+margin_top = 286.824
+margin_right = 85.4045
+margin_bottom = 331.824
+rect_pivot_offset = Vector2( 89.4578, 21.3211 )
+texture = ExtResource( 2 )
+
+[node name="Nuvem-m" type="TextureRect" parent="ParallaxLayer3"]
+margin_left = -6.31427
+margin_top = 182.844
+margin_right = 202.686
+margin_bottom = 226.844
+rect_pivot_offset = Vector2( 284.049, -20.2708 )
+texture = ExtResource( 3 )
+
+[node name="Nuvem-m3" type="TextureRect" parent="ParallaxLayer3"]
+margin_left = -163.77
+margin_top = 301.678
+margin_right = 45.2305
+margin_bottom = 345.678
+rect_pivot_offset = Vector2( 284.049, -20.2708 )
+texture = ExtResource( 3 )
+
+[node name="Nuvem-m2" type="TextureRect" parent="ParallaxLayer3"]
+margin_left = 212.044
+margin_top = 185.815
+margin_right = 421.044
+margin_bottom = 229.815
+rect_pivot_offset = Vector2( 65.6908, -23.2416 )
+texture = ExtResource( 3 )
+
+[node name="Nuvem-m4" type="TextureRect" parent="ParallaxLayer3"]
+margin_left = -58.304
+margin_top = 319.503
+margin_right = 150.696
+margin_bottom = 363.503
+rect_pivot_offset = Vector2( 65.6908, -23.2416 )
+texture = ExtResource( 3 )
+
+[node name="Nuvem-p" type="TextureRect" parent="ParallaxLayer3"]
+margin_left = 151.141
+margin_top = 200.669
+margin_right = 265.141
+margin_bottom = 245.669
+rect_pivot_offset = Vector2( 126.593, -38.0959 )
+texture = ExtResource( 2 )
+
+[node name="Nuvem-p4" type="TextureRect" parent="ParallaxLayer3"]
+margin_left = -129.604
+margin_top = 322.474
+margin_right = -15.6045
+margin_bottom = 367.474
+rect_pivot_offset = Vector2( 126.593, -38.0959 )
+texture = ExtResource( 2 )

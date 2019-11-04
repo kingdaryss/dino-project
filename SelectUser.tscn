@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://SelectUser.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/SuperMario256.ttf" type="DynamicFontData" id=2]
@@ -67,9 +67,18 @@
 [ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00009.png" type="Texture" id=65]
 [ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00010.png" type="Texture" id=66]
 [ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00011.png" type="Texture" id=67]
-[ext_resource path="res://UI/Button/Select/botaoArrow-Hover.png" type="Texture" id=68]
-[ext_resource path="res://UI/Button/Select/botaoArrow-Pressed.png" type="Texture" id=69]
-[ext_resource path="res://UI/Button/Select/botaoArrow-Normal.png" type="Texture" id=70]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00012.png" type="Texture" id=68]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00013.png" type="Texture" id=69]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00014.png" type="Texture" id=70]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00015.png" type="Texture" id=71]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00016.png" type="Texture" id=72]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00017.png" type="Texture" id=73]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00018.png" type="Texture" id=74]
+[ext_resource path="res://Dino_Prefab/Dino-Idle/Dino-idle_00019.png" type="Texture" id=75]
+[ext_resource path="res://UI/Button/Select/botaoArrow-Hover.png" type="Texture" id=76]
+[ext_resource path="res://UI/Button/Select/botaoArrow-Pressed.png" type="Texture" id=77]
+[ext_resource path="res://UI/Button/Select/botaoArrow-Normal.png" type="Texture" id=78]
+[ext_resource path="res://Nuvens.tscn" type="PackedScene" id=79]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -99,29 +108,29 @@ animations = [ {
 "name": "spikeIdle",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ) ],
+"frames": [ ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ) ],
 "loop": true,
 "name": "trexIdle",
 "speed": 10.0
 } ]
 
 [sub_resource type="StyleBoxTexture" id=7]
-texture = ExtResource( 68 )
+texture = ExtResource( 76 )
 region_rect = Rect2( 0, 0, 570, 272 )
 expand_margin_left = 30.0
 
 [sub_resource type="StyleBoxTexture" id=8]
-texture = ExtResource( 69 )
+texture = ExtResource( 77 )
 region_rect = Rect2( 0, 0, 570, 272 )
 expand_margin_left = 30.0
 
 [sub_resource type="StyleBoxTexture" id=9]
-texture = ExtResource( 69 )
+texture = ExtResource( 77 )
 region_rect = Rect2( 0, 0, 570, 272 )
 expand_margin_left = 30.0
 
 [sub_resource type="StyleBoxTexture" id=10]
-texture = ExtResource( 70 )
+texture = ExtResource( 78 )
 region_rect = Rect2( 0, 0, 570, 274 )
 expand_margin_left = 30.0
 
@@ -136,125 +145,65 @@ anchor_bottom = 1.0
 script = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 14.2801
-margin_top = 22.2134
-margin_right = 836.28
-margin_bottom = 73.2134
-rect_scale = Vector2( 1.47709, 1.47709 )
+margin_left = 260.0
+margin_top = 60.0
+margin_right = 1145.0
+margin_bottom = 111.0
 custom_fonts/font = SubResource( 1 )
 text = "Selecione o seu dinossauro !!"
 
 [node name="btnTrex" type="Button" parent="."]
 margin_left = 40.0
-margin_top = 147.681
-margin_right = 55.0
-margin_bottom = 162.681
-rect_scale = Vector2( 15, 15 )
+margin_top = 190.0
+margin_right = 230.0
+margin_bottom = 290.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="btnTrex"]
-position = Vector2( 7.4325, 7.02399 )
-scale = Vector2( 0.0178852, 0.0218582 )
-frames = SubResource( 6 )
-animation = "trexIdle"
-speed_scale = 1.5
-playing = true
-
-[node name="btnSpike" type="Button" parent="."]
-margin_left = 309.8
-margin_top = 147.681
-margin_right = 324.8
-margin_bottom = 162.681
-rect_scale = Vector2( 15, 15 )
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="btnSpike"]
-position = Vector2( 9.77588, 6.83398 )
-scale = Vector2( 0.0178852, 0.0218582 )
-frames = SubResource( 6 )
-animation = "spikeIdle"
-frame = 24
-speed_scale = 2.0
-playing = true
-
-[node name="btnSpike2" type="Button" parent="."]
-margin_left = 580.0
-margin_top = 147.681
-margin_right = 595.0
-margin_bottom = 162.681
-rect_scale = Vector2( 15, 15 )
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="btnSpike2"]
-position = Vector2( 7.33325, 6.83398 )
-scale = Vector2( 0.0178852, 0.0218582 )
+position = Vector2( 100, -11.612 )
+scale = Vector2( 0.236096, 0.261113 )
 frames = SubResource( 6 )
 animation = "trexIdle"
 frame = 4
 speed_scale = 2.0
 playing = true
 
-[node name="btnSpike3" type="Button" parent="."]
-margin_left = 850.0
-margin_top = 147.681
-margin_right = 865.0
-margin_bottom = 162.681
-rect_scale = Vector2( 15, 15 )
+[node name="btnSpike" type="Button" parent="."]
+margin_left = 309.8
+margin_top = 190.0
+margin_right = 499.8
+margin_bottom = 290.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="btnSpike3"]
-position = Vector2( 9.77588, 6.83398 )
-scale = Vector2( 0.0178852, 0.0218582 )
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="btnSpike"]
+position = Vector2( 130.2, -20 )
+scale = Vector2( 0.282911, 0.317541 )
 frames = SubResource( 6 )
 animation = "spikeIdle"
-frame = 22
-speed_scale = 2.0
-playing = true
-
-[node name="btnSpike4" type="Button" parent="."]
-margin_left = 1120.0
-margin_top = 147.681
-margin_right = 1135.0
-margin_bottom = 162.681
-rect_scale = Vector2( 15, 15 )
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="btnSpike4"]
-position = Vector2( 9.77588, 6.83398 )
-scale = Vector2( 0.0178852, 0.0218582 )
-frames = SubResource( 6 )
-animation = "spikeIdle"
-frame = 22
-speed_scale = 2.0
+frame = 4
+speed_scale = 2.5
 playing = true
 
 [node name="btnMenuPrincipal" type="Button" parent="."]
-margin_left = 20.0
-margin_top = 670.0
-margin_right = 669.0
-margin_bottom = 921.0
-rect_scale = Vector2( 0.396743, 0.345005 )
+margin_left = 30.0
+margin_top = 650.0
+margin_right = 580.0
+margin_bottom = 850.0
+rect_scale = Vector2( 0.425314, 0.425314 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = SubResource( 9 )
 custom_styles/normal = SubResource( 10 )
 custom_fonts/font = SubResource( 11 )
 text = "Menu Principal"
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 79 )]
 [connection signal="pressed" from="btnTrex" to="." method="_on_btnTrex_pressed"]
 [connection signal="pressed" from="btnSpike" to="." method="_on_btnSpike_pressed"]
 [connection signal="pressed" from="btnMenuPrincipal" to="." method="_on_menuprincipal_pressed"]

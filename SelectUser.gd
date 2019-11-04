@@ -1,41 +1,40 @@
 extends Control
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var scena = preload("res://Deserto.tscn")
+var center = Vector2(-350, -850)
 
-var AnimationRunning = ""
-var AnimationDying = ""
-
-# Called when the node enters the scene tree for the first time.
+# INSTANCIANDO NO MEIO DO NODE2D
 func _ready():
-	pass # Replace with function body.
+	set_position(center)
+	pass 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
+# IR PARA MENU PRINCIPAL
 func _on_menuprincipal_pressed():
 	get_tree().change_scene("res://Menu.tscn")
-	pass # Replace with function body.
+	pass
 
 
+
+# DINO T-REX
 func _on_btnTrex_pressed():
-	get_node("/root/Node2D").AnimationRunning = "trex-running"
-	get_node("/root/Node2D").AnimationDying = "trex-dying"
-	mudaScenaNode2D()
-	pass # Replace with function body.
+	mudaCenaNode2D()
+	get_node("/root/Node2D/Deserto/Dino").AnimationRunning = "trex-running"
+	get_node("/root/Node2D/Deserto/Dino").AnimationDying = "trex-dying"
+	self.queue_free()
+	pass
 
-
+# DINO DINO-ESPINHO
 func _on_btnSpike_pressed():
-	get_node("/root/Node2D").AnimationRunning = "dinoSpike-running"
-	get_node("/root/Node2D").AnimationDying = "dinoSpike-dying"
-	mudaScenaNode2D()
-	pass # Replace with function body.
-	
-func mudaScenaNode2D():
-	get_tree().change_scene("res://Node2D.tscn")
+	mudaCenaNode2D()
+	get_node("/root/Node2D/Deserto/Dino").AnimationRunning = "dinoSpike-running"
+	get_node("/root/Node2D/Deserto/Dino").AnimationDying = "dinoSpike-dying"
+	self.queue_free()
+	pass 
+
+
+#FUNC PARA MUDAR DE CENA
+func mudaCenaNode2D():
+	get_node("/root/Node2D").add_child(scena.instance())
 	pass
 
 
