@@ -7,6 +7,7 @@ export var AnimationDying = ""
 
 # ATRIBUTOS DO DINOSSAURO
 export var currentLife : int = 3*2
+export var hitMy : bool = false
 export var isGrounded : bool = false
 var trilhaCimaMax = -420
 var trilhaBaixoMax = -200
@@ -33,6 +34,9 @@ var rng = RandomNumberGenerator.new()
 # PARA DEBUGAR ANIMAÇÃO DO DINOSSAURO
 var injeccion = 0
 
+var intervaloVisibilidade = 0
+var tempoVisibilidade = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
@@ -42,7 +46,18 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-
+	if hitMy == true:
+		tempoVisibilidade = tempoVisibilidade + delta
+		if tempoVisibilidade <= 2:
+			self.visible = true
+			intervaloVisibilidade += 1
+			if intervaloVisibilidade >= 5:
+				self.visible = false
+				intervaloVisibilidade = 0
+	if tempoVisibilidade >= 2:
+		tempoVisibilidade = 0
+		hitMy = false
+		self.visible = true
 # INTRODUÇÃO DO DINOSSAURO
 
 	if get_position().x < positionXMax:
@@ -112,8 +127,10 @@ func colidiu(area):
 			
 		if currentLife == 2*2:
 			get_parent().get_node("heart-life6").animation = "Heart-death"
+			hitMy = true
 			
 		if currentLife == 1*2:
+			hitMy = true
 			get_parent().get_node("heart-life4").animation = "Heart-death"
 			
 		if currentLife <= 0:
@@ -129,9 +146,11 @@ func saiuColidiu(area):
 		
 	if currentLife == 2*2:
 		get_parent().get_node("heart-life6").animation = "Heart-death"
+		hitMy = true
 		
 	if currentLife == 1*2:
 		get_parent().get_node("heart-life4").animation = "Heart-death"
+		hitMy = true
 		
 	if currentLife <= 0:
 		get_parent().get_node("heart-life2").animation = "Heart-death"
