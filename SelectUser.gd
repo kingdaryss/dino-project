@@ -1,11 +1,7 @@
 extends Control
 
-var scena = preload("res://Deserto.tscn")
-var center = Vector2(-350, -850)
-
 # INSTANCIANDO NO MEIO DO NODE2D
 func _ready():
-	set_position(center)
 	pass 
 
 # IR PARA MENU PRINCIPAL
@@ -17,31 +13,28 @@ func _on_menuprincipal_pressed():
 
 # DINO T-REX
 func _on_btnTrex_pressed():
+	pai.animationRunning = "trex-running"
+	pai.animationDying = "trex-dying"
 	mudaCenaNode2D()
-	get_node("/root/Node2D/Deserto/Dino").AnimationRunning = "trex-running"
-	get_node("/root/Node2D/Deserto/Dino").AnimationDying = "trex-dying"
-	self.queue_free()
 	pass
 
 # DINO DINO-ESPINHO
 func _on_btnSpike_pressed():
+	pai.animationRunning = "dinoSpike-running"
+	pai.animationDying = "dinoSpike-dying"
 	mudaCenaNode2D()
-	get_node("/root/Node2D/Deserto/Dino").AnimationRunning = "dinoSpike-running"
-	get_node("/root/Node2D/Deserto/Dino").AnimationDying = "dinoSpike-dying"
-	self.queue_free()
 	pass 
 
 func _on_btnRaptor_pressed():
+	pai.animationRunning = "raptor-running"
+	pai.animationDying = "raptor-dying"
 	mudaCenaNode2D()
-	get_node("/root/Node2D/Deserto/Dino").AnimationRunning = "raptor-running"
-	get_node("/root/Node2D/Deserto/Dino").AnimationDying = "raptor-dying"
-	self.queue_free()
 	pass
 
 
 #FUNC PARA MUDAR DE CENA
 func mudaCenaNode2D():
-	get_node("/root/Node2D").add_child(scena.instance())
+	get_tree().change_scene('res://Deserto.tscn')
 	pass
 
 

@@ -2,18 +2,19 @@ extends Area2D
 
 # ANIMAÇÕES DO DINOSSAURO RECEBEM DO res://SelectUser.gd
 
-export var AnimationRunning = ""
-export var AnimationDying = ""
+onready var AnimationRunning = pai.animationRunning
+onready var AnimationDying = pai.animationDying
+
 
 # ATRIBUTOS DO DINOSSAURO
-export var currentLife : int = 3*2
+export var currentLife : int = 3
 export var hitMy : bool = false
 export var isGrounded : bool = false
-var trilhaCimaMax = -420
-var trilhaBaixoMax = -200
-var trilhaAtual = -220
-var positionX = -300
-var positionXMax = 0
+var trilhaCimaMax = 450
+var trilhaBaixoMax = 700
+var trilhaAtual = 500
+var positionX = 0
+var positionXMax = 320
 var chao = Vector2(positionX, trilhaAtual)
 var gravidade = 4000
 var velocidade = Vector2()
@@ -22,7 +23,8 @@ var modificador_gravidade = 4
 
 # VARIAVEIS DE OBSTACULO
 var cacto = preload("res://CactoG.tscn")
-var pedra = preload("res://PedraG.tscn")
+var pedra = preload("res://PedraDeserto.tscn")
+
 var obstaculos = [cacto, pedra]
 var obstaculo = 0
 var tempo = 0
@@ -46,6 +48,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+
+# INTRODUÇÃO DO DINOSSAURO
+
+	if get_position().x < positionXMax:
+		positionX += 1
+		chao = Vector2(positionX, trilhaAtual)
+	
 	if hitMy == true:
 		tempoVisibilidade = tempoVisibilidade + delta
 		if tempoVisibilidade <= 2:
@@ -58,11 +67,6 @@ func _physics_process(delta):
 		tempoVisibilidade = 0
 		hitMy = false
 		self.visible = true
-# INTRODUÇÃO DO DINOSSAURO
-
-	if get_position().x < positionXMax:
-		positionX += 1
-		chao = Vector2(positionX, trilhaAtual)
 
 # INJEÇÃO DE ANIMAÇÃO DE CORRIDA DO DINOSSAURO
 
@@ -73,15 +77,15 @@ func _physics_process(delta):
 
 # ALTERANDO O Z_INDEX DO DINOSSAURO DE ACORDO PARA A PERSPECTIVA DE PROFUNDIDADE
 
-	if !(trilhaAtual <= -370):
+	if (trilhaAtual >= 470):
 		set("z_index", 0)
-	if !(trilhaAtual <= -350):
+	if (trilhaAtual >= 520):
 		set("z_index", 1)
-	if !(trilhaAtual <= -300):
+	if (trilhaAtual >= 580):
 		set("z_index", 2)
-	if !(trilhaAtual <= -220):
+	if (trilhaAtual >= 600):
 		set("z_index", 3)
-	if !(trilhaAtual <= -170):
+	if (trilhaAtual >= 650):
 		set("z_index", 4)
 
 # INTERVALO DE OBSTACULOS E INSERÇÃO DE OBSTACULO
@@ -111,7 +115,9 @@ func _physics_process(delta):
 			if trilhaAtual < trilhaBaixoMax:
 				trilhaAtual += +5
 				chao = Vector2(positionX, trilhaAtual)
+
 	position += velocidade * delta
+
 	if get_position().y > chao.y:
 		set_position(chao)
 	if get_position().y == chao.y:
@@ -125,36 +131,19 @@ func colidiu(area):
 # afins de gambiarra cada coração vale 2 int
 		currentLife -= 1
 			
-		if currentLife == 2*2:
+		if currentLife == 2:
 			get_parent().get_node("heart-life6").animation = "Heart-death"
 			hitMy = true
 			
-		if currentLife == 1*2:
+		if currentLife == 1:
 			hitMy = true
 			get_parent().get_node("heart-life4").animation = "Heart-death"
 			
 		if currentLife <= 0:
 			get_parent().get_node("heart-life2").animation = "Heart-death"
-			get_node("/root/Node2D").add_child(get_node("/root/Node2D/").gameOver.instance())
 			$"Dino-idle_00000".animation = self.AnimationDying
-
+			yield(get_tree().create_timer(0.5), "timeout")
+			get_tree().change_scene('res://GameOver.tscn')
+			
 	pass
 	
-func saiuColidiu(area):
-# afins de gambiarra cada coração vale 2 int
-	currentLife -= 1
-		
-	if currentLife == 2*2:
-		get_parent().get_node("heart-life6").animation = "Heart-death"
-		hitMy = true
-		
-	if currentLife == 1*2:
-		get_parent().get_node("heart-life4").animation = "Heart-death"
-		hitMy = true
-		
-	if currentLife <= 0:
-		get_parent().get_node("heart-life2").animation = "Heart-death"
-		get_node("/root/Node2D").add_child(get_node("/root/Node2D/").gameOver.instance())
-		$"Dino-idle_00000".animation = self.AnimationDying
-	pass
-

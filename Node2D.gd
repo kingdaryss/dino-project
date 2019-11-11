@@ -1,22 +1,33 @@
 extends Node2D
 
-# PRELOADS DAS CENAS
-const selectUser = preload("res://SelectUser.tscn")
-const desert = preload("res://Deserto.tscn")
-const gameOver = preload("res://GameOver.tscn")
+# velocidade
+var velocidade = Vector2(-500,0)
 
-var score = 0
+#animacoes
+export var animationRunning = ''
+export var animationDying = ''
+
+
+
+# placar
+export var primeiro = 0
+export var primeiroNome = ""
+export var segundo = 0
+export var segundoNome = ""
+export var terceiro = 0
+export var terceiroNome = ""
+
+export var scoreFinal = 0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_tree().paused = false
 
 # INSTANCIANDO A CENA DA SELEÇÃO DO DINOSSAURO
-
-	self.add_child(selectUser.instance())
+	get_tree().change_scene('res://SelectUser.tscn')
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	pass

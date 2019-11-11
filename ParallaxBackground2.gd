@@ -8,6 +8,6 @@ func _ready():
 func _process(delta):
 # VELOCIDADE DO CHÃO AUMENTADA POR DELTAFRAME CONSULTADO NO res://Deserto.gd
 
-	parallax_offset -= get_node("/root/Node2D/Deserto").velocidade * -delta
+	parallax_offset -= pai.velocidade * -delta
 	set_scroll_offset(parallax_offset)
 	pass
